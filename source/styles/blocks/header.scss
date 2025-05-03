@@ -1,5 +1,90 @@
-.header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+.header__wrapper {
+  @include section-wrapper;
+}
+
+.header__nav {
+  padding: 13px 21px 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 65px;
+
+  @media (min-width: $min-tablet-width) {
+    padding: 25px 34px 65px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 55px 110px 110px;
+  }
+}
+
+.header__logo {
+  display: block;
+}
+
+.header__burger-button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  padding: 0;
+  background-color: $icons-primary;
+  mask-image: url('../../images/icons/burger-menu.svg');
+  mask-position: center;
+  mask-repeat: no-repeat;
+
+  @media (min-width: $min-tablet-width) {
+    display: none;
+  }
+}
+
+.header__burger-button--close {
+  width: 18px;
+  height: 18px;
+  mask-image: url('../../images/icons/burger-close.svg');
+}
+
+.header__menu {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 33px;
+  flex-wrap: wrap;
+
+  @media (min-width: $min-tablet-width) {
+    display: flex;
+  }
+}
+
+.header__link {
+  font-family: $font-primary;
+  font-size: 20px;
+  line-height: 20px;
+  color: $dark-color;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @media (min-width: $min-tablet-width) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+    line-height: 30px;
+    color: $light-color;
+  }
+}
+
+.header__link--current {
+  @media (min-width: $min-tablet-width) {
+    text-decoration: underline;
+    text-decoration-color: $special-color;
+    text-underline-offset: 10px;
+    text-underline-position: under;
+    text-decoration-thickness: 2px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-decoration-color: $light-color;
+  }
 }
